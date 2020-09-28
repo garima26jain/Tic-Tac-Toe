@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  color: #545454;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background: #14bdac;
+  /* width: 500px;---
+  height: 500px;
+  no longer req bcoz
+   now its height & width will be determined by its children
+  */
+  margin: 50px;
+  padding: 50px;
+  border-radius: 25px;
+}
+
+.title {
+  text-align: center;
+}
+
+.status-action {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+  font-size: 25px;
+  height: 30px;
+}
+
+.status span {
+  color: #f2ebd3;
+}
+
+.reset {
+  cursor: pointer;
+}
+
+.reset:hover {
+  color: #f2ebd3;
+}
+
+.game-grid {
+  margin-top: 50px;
+  /*to -dentify the grid area --a bit darker shade of bg color*/
+  background-color: #0da192;
+  display: grid;
+  /* 3columns all with 250px */
+  /* grid-template-columns: 250px 250px 250px; */
+  /* also with repeat function --3 spaces repeated with 1 fr unit */
+  /* 1 fr --divides the space available into equal space of specified column */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* making the grid darker applying gap between the cells */
+  grid-gap: 15px;
+}
+
+.game-cell {
+  height: 200px;
+  width: 200px;
+  /*here applying bg color same as body */
+  background-color: #14bdac;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.x::after {
+  content: "×";
+  font-size: 200px;
+}
+
+.o::after {
+  content: " ○";
+  font-size: 200px;
+  color: #f2ebd3;
+}
+
+.x,
+.o {
+  cursor: auto;
+  /*cursor:default ---also works make it back mouse arrow*/
+}
+
+.won::after {
+  color: red;
+}
+
+/* Adding media queries for making it responsive */
+/*phone size*/
+/* @media only screen and (max-width: 1024px) {
+  .game-grid {
+    margin-top: 25px;
+    grid-gap: 10px;
+  }
+  .x::after {
+    font-size: 150px;
+  }
+  .o::after {
+    font-size: 175px;
+  }
+}
+
+/**tablet size*/
+/* @media only screen and (max-width: 1024px) {
+  .container {
+    margin: 25px;
+    padding: 25px;
+  }
+  .game-cell {
+    height: 100px;
+    width: 100px;
+  }
+  .x::after {
+    font-size: 100px;
+  }
+  .o::after {
+    font-size: 125px;
+  }
+} */ */
